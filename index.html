@@ -411,45 +411,60 @@
             <!-- Аналогичные сердечки -->
         </div>
         <form id="weddingForm" 
-      action="https://forms.gle/58WyFLECsuhwUEA38"
-      method="POST">
-            <h2>Анкета гостя</h2>
-            <div style="max-width: 500px; text-align: left;">
-                <label class="form-label">Ваше имя и фамилия (если парой или с семьей укажите все имена)</label>
-                <input type="text" placeholder="Например: Иван и Мария Петровы" required>
+          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfeGtOK7s5J00mzsXmsQoAoDmnO-WnvYo0rrSLr6ZFKz1ykHA/formResponse" 
+          method="POST"
+          target="_self">
 
-                <label class="form-label">Подтвердите присутствие:</label>
-                <div class="radio-group">
-                    <label>
-                        <input type="radio" name="attendance" value="yes" required>
-                        <span>Да, с удовольствием!</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="attendance" value="no">
-                        <span>К сожалению, нет</span>
-                    </label>
-                </div>
+        <!-- Поле для имени -->
+        <div class="form-group">
+            <label class="form-label">Ваше имя и фамилия (если парой или с семьей укажите все имена)</label>
+            <input type="text" 
+                   name="entry.123456789" <!-- Замените на реальный ID -->
+                   placeholder="Например: Иван и Мария Петровы" 
+                   required>
+        </div>
 
-                <label class="form-label">Предпочитаемые напитки:</label>
-                <div class="checkbox-group">
-                    <label><input type="checkbox"> Шампанское</label>
-                    <label><input type="checkbox"> Вино белое полусладкое</label>
-                    <label><input type="checkbox"> Вино белое сухое</label>
-                    <label><input type="checkbox"> Вино красное полусладкое</label>
-                    <label><input type="checkbox"> Вино красное сухое</label>
-                    <label><input type="checkbox"> Виски</label>
-                    <label><input type="checkbox"> Коньяк</label>
-                    <label><input type="checkbox"> Водка</label>
-                    <label><input type="checkbox"> Джин</label>
-                </div>
+        <!-- Подтверждение присутствия -->
+        <div class="form-group">
+            <label class="form-label">Подтвердите присутствие:</label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" 
+                           name="entry.987654321" <!-- Замените на реальный ID -->
+                           value="Да, с удовольствием!" 
+                           required>
+                    Да, с удовольствием!
+                </label>
+                <label>
+                    <input type="radio" 
+                           name="entry.987654321" <!-- Тот же ID, что выше -->
+                           value="К сожалению, нет">
+                    К сожалению, нет
+                </label>
             </div>
-            <button type="submit">Отправить ответ</button>
-            <p style="margin-top: 20px; font-size: 0.9em;">
-                Пожалуйста, подтвердите своё присутствие<br>
-                не позднее 1 июня!
-            </p>
-        </form>
-    </section>
+        </div>
+
+        <!-- Напитки -->
+        <div class="form-group">
+            <label class="form-label">Предпочитаемые напитки:</label>
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" 
+                           name="entry.555555555" <!-- Замените на реальный ID -->
+                           value="Шампанское">
+                    Шампанское
+                </label>
+                <!-- Добавьте остальные напитки -->
+            </div>
+        </div>
+
+        <button type="submit">Отправить ответ</button>
+        <p style="margin-top: 20px; font-size: 0.9em;">
+            Пожалуйста, подтвердите своё присутствие<br>
+            не позднее 1 июня!
+        </p>
+    </form>
+</section>
 
     <script>
         // Таймер
