@@ -44,7 +44,7 @@
             to { transform: translateX(0); opacity: 1; }
         }
 
-        /* Страницы */
+        /* Общие стили */
         .page {
             min-height: 100vh;
             padding: 40px 20px;
@@ -110,14 +110,7 @@
             animation: namesAppear 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.8s forwards;
         }
 
-        /* Общие стили */
-        h2 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.8rem;
-            color: #c94560;
-            margin-bottom: 30px;
-        }
-
+        /* Фото и карта */
         .photo {
             width: 90%;
             max-width: 400px;
@@ -126,6 +119,15 @@
             border-radius: 15px;
             margin: 20px 0;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .map {
+            width: 100%;
+            height: 300px;
+            border: 2px solid #ffb6c1;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
         }
 
         /* Программа */
@@ -152,11 +154,6 @@
             border-radius: 10px;
             flex-shrink: 0;
         }
-
-        .schedule-item:nth-child(1) { animation-delay: 0.2s; }
-        .schedule-item:nth-child(2) { animation-delay: 0.4s; }
-        .schedule-item:nth-child(3) { animation-delay: 0.6s; }
-        .schedule-item:nth-child(4) { animation-delay: 0.8s; }
 
         /* Таймер */
         .countdown {
@@ -216,13 +213,6 @@
             margin: 10px 0;
         }
 
-        .radio-group label {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.95rem;
-        }
-
         .checkbox-group {
             columns: 2;
             text-align: left;
@@ -249,17 +239,6 @@
 
         button:hover {
             transform: scale(1.05);
-        }
-
-        /* Карта */
-        .map {
-            width: 100%;
-            height: 300px;
-            border: none;
-            border-radius: 15px;
-            margin: 20px 0;
-            border: 2px solid #ffb6c1;
-            box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
         }
 
         /* Адаптивность */
@@ -295,7 +274,7 @@
     <!-- Страница 2 -->
     <section class="page">
         <div class="hearts-container">
-            <!-- Аналогичные 4 сердечки -->
+            <!-- Аналогичные сердечки -->
         </div>
         <h2>Дорогие гости!</h2>
         <p style="max-width: 500px;">
@@ -304,14 +283,14 @@
             мы будем рады провести этот день в кругу самых родных<br>
             и близких людей.
         </p>
-        <img src="images/our-photo1.jpg" class="photo" alt="Наша фотография">
-        <img src="images/our-photo2.jpg" class="photo" alt="Наша фотография">
+        <img src="images/photo1.jpg" class="photo" alt="Наша фотография">
+        <img src="images/photo2.jpg" class="photo" alt="Наша фотография">
     </section>
 
     <!-- Страница 3 -->
     <section class="page">
         <div class="hearts-container">
-            <!-- Аналогичные 4 сердечки -->
+            <!-- Аналогичные сердечки -->
         </div>
         <h2>Место проведения</h2>
         <p style="margin-bottom: 15px; font-size: 1.1rem;">
@@ -322,13 +301,154 @@
         </p>
         <iframe class="map"
             src="https://yandex.ru/map-widget/v1/?ll=37.540926%2C55.971019&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzI4NDg5MRI60KDQkNC80LXRgNC40LrQsCwg0JzQvtGB0LrQvtCy0YHQutCw0Y8g0LTQvtC8LCDQtNC40L3RgdGC0YDQsNC60YbQuNGPINCz0LXRgNCY0LjRgSwg0KTQtdC00LjRgNCw0LvRjNC90YvRhSDQs9C10YDQtdGB0YLQsCwg0JDQtNGA0LjQvNCw0YDRgdC60LDRjyDRg9C70LjRhtCwIgogCg3QhtCb0JAhFsKbQkM%2C&z=17" 
-            allowfullscreen="true"
-            style="position:relative;">
+            allowfullscreen="true">
         </iframe>
     </section>
 
-    <!-- Остальные страницы с аналогичными hearts-container -->
-    
+    <!-- Страница 4 -->
+    <section class="page">
+        <div class="hearts-container">
+            <!-- Аналогичные сердечки -->
+        </div>
+        <h2>Программа дня</h2>
+        <div class="schedule-item">
+            <img src="images/schedule1.jpg" alt="Сбор гостей">
+            <div>
+                <h3>14:00</h3>
+                <p>Сбор гостей</p>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <img src="images/schedule2.jpg" alt="Церемония">
+            <div>
+                <h3>14:30</h3>
+                <p>Свадебная церемония</p>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <img src="images/schedule3.jpg" alt="Банкет">
+            <div>
+                <h3>15:30</h3>
+                <p>Праздничный банкет</p>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <img src="images/schedule4.jpg" alt="Окончание">
+            <div>
+                <h3>22:00</h3>
+                <p>Окончание вечера</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Страница 5 -->
+    <section class="page">
+        <div class="hearts-container">
+            <!-- Аналогичные сердечки -->
+        </div>
+        <h2>Наши пожелания</h2>
+        <div style="max-width: 500px;">
+            <p>Не тратьте время на поиск подарков!<br>
+            Ваши конверты станут шагом к нашей мечте!</p>
+            
+            <p style="margin: 20px 0;">
+                Цветы: только эустомы, пионы или кустовые розы.<br>
+                Лучше принесите бутылочку вашего любимого напитка<br>
+                с подписанным поводом для открытия.
+            </p>
+            
+            <p>Очень просим отказаться от криков «Горько!»</p>
+        </div>
+    </section>
+
+    <!-- Страница 6 -->
+    <section class="page">
+        <div class="hearts-container">
+            <!-- Аналогичные сердечки -->
+        </div>
+        <h2>Дресс-код</h2>
+        <p style="margin: 15px 0; max-width: 500px;">
+            Нам будет очень приятно, если вы учтете наши пожелания<br>
+            и при выборе одежды предпочтете вечерние наряды<br>
+            в представленной ниже гамме
+        </p>
+        <div style="display: flex; gap: 15px; margin: 20px 0;">
+            <div style="width: 60px; height: 60px; border-radius: 10px; background: #FFFACD;"></div>
+            <div style="width: 60px; height: 60px; border-radius: 10px; background: #FFDAB9;"></div>
+            <div style="width: 60px; height: 60px; border-radius: 10px; background: #D8BFD8;"></div>
+        </div>
+    </section>
+
+    <!-- Страница 7 -->
+    <section class="page">
+        <div class="hearts-container">
+            <!-- Аналогичные сердечки -->
+        </div>
+        <h2>До торжества осталось</h2>
+        <div class="countdown">
+            <div class="countdown-item">
+                <span id="days">0</span>
+                <br>дней
+            </div>
+            <div class="countdown-item">
+                <span id="hours">0</span>
+                <br>часов
+            </div>
+            <div class="countdown-item">
+                <span id="minutes">0</span>
+                <br>минут
+            </div>
+            <div class="countdown-item">
+                <span id="seconds">0</span>
+                <br>секунд
+            </div>
+        </div>
+    </section>
+
+    <!-- Страница 8 -->
+    <section class="page">
+        <div class="hearts-container">
+            <!-- Аналогичные сердечки -->
+        </div>
+        <form id="weddingForm">
+            <h2>Анкета гостя</h2>
+            <div style="max-width: 500px; text-align: left;">
+                <label class="form-label">Ваше имя и фамилия (если парой или с семьей укажите все имена)</label>
+                <input type="text" placeholder="Например: Иван и Мария Петровы" required>
+
+                <label class="form-label">Подтвердите присутствие:</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="attendance" value="yes" required>
+                        <span>Да, с удовольствием!</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="attendance" value="no">
+                        <span>К сожалению, нет</span>
+                    </label>
+                </div>
+
+                <label class="form-label">Предпочитаемые напитки:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox"> Шампанское</label>
+                    <label><input type="checkbox"> Вино белое полусладкое</label>
+                    <label><input type="checkbox"> Вино белое сухое</label>
+                    <label><input type="checkbox"> Вино красное полусладкое</label>
+                    <label><input type="checkbox"> Вино красное сухое</label>
+                    <label><input type="checkbox"> Виски</label>
+                    <label><input type="checkbox"> Коньяк</label>
+                    <label><input type="checkbox"> Водка</label>
+                    <label><input type="checkbox"> Джин</label>
+                </div>
+            </div>
+            <button type="submit">Отправить ответ</button>
+            <p style="margin-top: 20px; font-size: 0.9em;">
+                Пожалуйста, подтвердите своё присутствие<br>
+                не позднее 1 июня!
+            </p>
+        </form>
+    </section>
+
     <script>
         // Таймер
         function updateTimer() {
@@ -353,8 +473,16 @@
             document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
         }
 
+        // Запуск таймера
         updateTimer();
         setInterval(updateTimer, 1000);
+
+        // Обработка формы (замените на свой URL)
+        document.getElementById('weddingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Спасибо за ваш ответ!');
+            this.reset();
+        });
     </script>
 </body>
 </html>
