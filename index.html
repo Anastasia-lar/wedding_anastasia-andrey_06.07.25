@@ -410,99 +410,52 @@
         <div class="hearts-container">
             <!-- Аналогичные сердечки -->
         </div>
-        <form id="weddingForm" 
-          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfeGtOK7s5J00mzsXmsQoAoDmnO-WnvYo0rrSLr6ZFKz1ykHA/formResponse" 
-          method="POST"
-          target="_self">
+      <form id="weddingForm" 
+      action="https://docs.google.com/forms/d/e/1FAIpQLSfeGtOK7s5J00mzsXmsQoAoDmnO-WnvYo0rrSLr6ZFKz1ykHA/formResponse" 
+      method="POST"
+      target="_self">
 
-        <!-- Поле для имени -->
-        <div class="form-group">
-            <label class="form-label">Ваше имя и фамилия (если парой или с семьей укажите все имена)</label>
-            <input type="text" 
-                   name="entry.2117628278" <!-- Замените на реальный ID -->
-                   placeholder="Например: Иван и Мария Петровы" 
-                   required>
+    <!-- Поле для имени -->
+    <div class="form-group">
+        <label class="form-label">Ваше имя и фамилия</label>
+        <input type="text" 
+               name="entry.2117628278" 
+               placeholder="Например: Иван и Мария Петровы" 
+               required>
+    </div>
+
+    <!-- Подтверждение присутствия -->
+    <div class="form-group">
+        <label class="form-label">Подтвердите присутствие:</label>
+        <div class="radio-group">
+            <label>
+                <input type="radio" 
+                       name="entry.229029981" 
+                       value="Да, с удовольствием!" 
+                       required>
+                Да, с удовольствием!
+            </label>
+            <label>
+                <input type="radio" 
+                       name="entry.229029981" 
+                       value="К сожалению, нет">
+                К сожалению, нет
+            </label>
         </div>
+    </div>
 
-        <!-- Подтверждение присутствия -->
-        <div class="form-group">
-            <label class="form-label">Подтвердите присутствие:</label>
-            <div class="radio-group">
-                <label>
-                    <input type="radio" 
-                           name="entry.229029981" <!-- Замените на реальный ID -->
-                           value="Да, с удовольствием!" 
-                           required>
-                    Да, с удовольствием!
-                </label>
-                <label>
-                    <input type="radio" 
-                           name="entry.229029981" <!-- Тот же ID, что выше -->
-                           value="К сожалению, нет">
-                    К сожалению, нет
-                </label>
-            </div>
+    <!-- Напитки -->
+    <div class="form-group">
+        <label class="form-label">Напитки:</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="entry.1507861999" value="Шампанское"> Шампанское</label>
+            <label><input type="checkbox" name="entry.1507861999" value="Вино белое полусладкое"> Вино белое полусладкое</label>
+            <!-- Остальные напитки аналогично -->
         </div>
+    </div>
 
-        <!-- Напитки -->
-        <div class="form-group">
-            <label class="form-label">Предпочитаемые напитки:</label>
-            <div class="checkbox-group">
-                <label>
-                    <input type="checkbox" 
-                           name="entry.1507861999" <!-- Замените на реальный ID -->
-                           value="Шампанское">
-                    Шампанское
-                </label>
-                <label>
-                    <input type="checkbox" 
-                           name="entry.1507861999" <!-- Замените на реальный ID -->
-                           value="Вино белое полусладкое">
-                    Вино белое полусладкое
-                </label>
-                 <label>
-                    <input type="checkbox" 
-                           name="entry.1507861999" <!-- Замените на реальный ID -->
-                           value="Вино белое сухое">
-                    Вино белое сухое
-                </label>
-                 <label>
-                    <input type="checkbox" 
-                           name="entry.1507861999" <!-- Замените на реальный ID -->
-                           value="Вино красное полусладкое">
-                    Вино красное полусладкое
-                </label>
-                 <label>
-                    <input type="checkbox" 
-                           name="entry.1507861999" <!-- Замените на реальный ID -->
-                           value="Вино красное сухое">
-                    Вино красное сухое
-                </label>
-                 <label>
-                    <input type="checkbox" 
-                           name="entry.1507861999" <!-- Замените на реальный ID -->
-                           value="Виски">
-                    Виски
-                </label>
-                 <label>
-                    <input type="checkbox" 
-                           name="entry.1507861999" <!-- Замените на реальный ID -->
-                           value="Коньяк">
-                    Коньяк
-                </label>
-                 <label>
-                    <input type="checkbox" 
-                           name="entry.1507861999" <!-- Замените на реальный ID -->
-                           value="Водка">
-                    Водка
-                </label>
-                 <label>
-                    <input type="checkbox" 
-                           name="entry.1507861999" <!-- Замените на реальный ID -->
-                           value="Джин">
-                    Джин
-                </label>
-                <!-- Добавьте остальные напитки -->
+    <button type="submit">Отправить ответ</button>
+</form>
             </div>
         </div>
 
