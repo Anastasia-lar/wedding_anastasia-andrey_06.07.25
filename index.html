@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анастасия и Андрей · 06.07.2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fff5f5;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        /* Анимации */
+        @keyframes namesAppear {
+            0% { transform: scale(0.5) translateY(50px); opacity: 0; }
+            100% { transform: scale(1) translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
+            25% { transform: translateY(-20px) rotate(15deg); opacity: 0.2; }
+            50% { transform: translateY(-40px) rotate(0deg); opacity: 0.15; }
+            75% { transform: translateY(-20px) rotate(-15deg); opacity: 0.1; }
+            100% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Страницы */
+        .page {
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Анимация сердечек */
+        .hearts-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-heart {
+            position: absolute;
+            opacity: 0.15;
+            animation: float 6s infinite linear;
+            width: 40px;
+        }
+
+        .floating-heart:nth-child(1) { animation-delay: 0s; width: 35px; }
+        .floating-heart:nth-child(2) { animation-delay: 2s; width: 45px; }
+        .floating-heart:nth-child(3) { animation-delay: 4s; width: 30px; }
+        .floating-heart:nth-child(4) { animation-delay: 1s; width: 40px; }
+
+        .heart-pos-1 { left: 5%; top: 15%; }
+        .heart-pos-2 { right: 5%; top: 25%; }
+        .heart-pos-3 { left: 15%; bottom: 20%; }
+        .heart-pos-4 { right: 20%; bottom: 30%; }
+
+        @media (max-width: 600px) {
+            .floating-heart { display: none; }
+        }
+
+        /* Первая страница */
+        .header-page {
+            background: linear-gradient(45deg, #ffd6e5 0%, #ffeff3 100%);
+        }
+
+        .wedding-date {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: #ff8095;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5rem;
+            color: #c94560;
+            line-height: 1.2;
+            transform: scale(0.5);
+            opacity: 0;
+            animation: namesAppear 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.8s forwards;
+        }
+
+        /* Общие стили */
+        h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8rem;
+            color: #c94560;
+            margin-bottom: 30px;
+        }
+
+        .photo {
+            width: 90%;
+            max-width: 400px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Программа */
+        .schedule-item {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            animation: slideIn 0.8s ease-out forwards;
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .schedule-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .schedule-item:nth-child(1) { animation-delay: 0.2s; }
+        .schedule-item:nth-child(2) { animation-delay: 0.4s; }
+        .schedule-item:nth-child(3) { animation-delay: 0.6s; }
+        .schedule-item:nth-child(4) { animation-delay: 0.8s; }
+
+        /* Таймер */
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .countdown-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            font-size: 1.1rem;
+        }
+
+        .countdown-item span {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #c94560;
+        }
+
+        /* Форма */
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-label {
+            display: block;
+            text-align: left;
+            font-size: 1.1rem;
+            margin: 15px 0 8px;
+            color: #5a2a3a;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ffb6c1;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            margin: 10px 0;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.95rem;
+        }
+
+        .checkbox-group {
+            columns: 2;
+            text-align: left;
+            margin: 10px 0;
+        }
+
+        .checkbox-group label {
+            display: block;
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+
+        button {
+            background: #ff69b4;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Карта */
+        .map {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 2px solid #ffb6c1;
+            box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 600px) {
+            .names { font-size: 3.5rem; }
+            h2 { font-size: 2.2rem; }
+            .countdown { grid-template-columns: 1fr 1fr; }
+            .countdown-item span { font-size: 1.5rem; }
+            .schedule-item { flex-direction: column; text-align: center; }
+            .checkbox-group { columns: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Страница 1 -->
+    <section class="page header-page">
+        <div class="hearts-container">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb6c1'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E" 
+                 class="floating-heart heart-pos-1">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb6c1'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E" 
+                 class="floating-heart heart-pos-2">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb6c1'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E" 
+                 class="floating-heart heart-pos-3">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb6c1'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E" 
+                 class="floating-heart heart-pos-4">
+        </div>
+        <span class="wedding-date">06 июля 2025</span>
+        <div class="names-container">
+            <h1 class="names">Анастасия<br>&<br>Андрей</h1>
+        </div>
+    </section>
+
+    <!-- Страница 2 -->
+    <section class="page">
+        <div class="hearts-container">
+            <!-- Аналогичные 4 сердечки -->
+        </div>
+        <h2>Дорогие гости!</h2>
+        <p style="max-width: 500px;">
+            В нашей жизни состоится одно из важных событий -<br>
+            наша свадьба! Ваше присутствие для нас искренне важно,<br>
+            мы будем рады провести этот день в кругу самых родных<br>
+            и близких людей.
+        </p>
+        <img src="images/our-photo1.jpg" class="photo" alt="Наша фотография">
+        <img src="images/our-photo2.jpg" class="photo" alt="Наша фотография">
+    </section>
+
+    <!-- Страница 3 -->
+    <section class="page">
+        <div class="hearts-container">
+            <!-- Аналогичные 4 сердечки -->
+        </div>
+        <h2>Место проведения</h2>
+        <p style="margin-bottom: 15px; font-size: 1.1rem;">
+            Яхт-клуб Пеликан<br>
+            Московская область, городской округ Мытищи,<br>
+            деревня Грибки, Адмиральская улица<br>
+            Координаты: 55.971019, 37.540926
+        </p>
+        <iframe class="map"
+            src="https://yandex.ru/map-widget/v1/?ll=37.540926%2C55.971019&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzI4NDg5MRI60KDQkNC80LXRgNC40LrQsCwg0JzQvtGB0LrQvtCy0YHQutCw0Y8g0LTQvtC8LCDQtNC40L3RgdGC0YDQsNC60YbQuNGPINCz0LXRgNCY0LjRgSwg0KTQtdC00LjRgNCw0LvRjNC90YvRhSDQs9C10YDQtdGB0YLQsCwg0JDQtNGA0LjQvNCw0YDRgdC60LDRjyDRg9C70LjRhtCwIgogCg3QhtCb0JAhFsKbQkM%2C&z=17" 
+            allowfullscreen="true"
+            style="position:relative;">
+        </iframe>
+    </section>
+
+    <!-- Остальные страницы с аналогичными hearts-container -->
+    
+    <script>
+        // Таймер
+        function updateTimer() {
+            const weddingDate = new Date('2025-07-06T14:00:00').getTime();
+            const now = new Date().getTime();
+            const diff = weddingDate - now;
+
+            if (diff < 0) {
+                document.querySelector('.countdown').innerHTML = 
+                    '<div style="font-size: 1.5rem">Свадьба уже состоялась!</div>';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    </script>
+</body>
+</html>
