@@ -1,20 +1,12 @@
-/* Для мобильных устройств */
-@media (max-width: 480px) {
-    form {
-        padding: 15px;
-    }
-    
-    .checkbox-group label {
-        font-size: 0.85rem;
-    }
-    
-    button[type="submit"] {
-        width: 100%;
-    }
-}
-
-/* Визуальная обратная связь */
-input:focus, button:focus {
-    outline: 2px solid #ff69b4;
-    outline-offset: 2px;
-}
+<script>
+  document.getElementById('weddingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    fetch(this.action, {
+      method: 'POST',
+      body: new FormData(this),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => alert('Спасибо! Ваш ответ сохранён.'))
+    .catch(error => alert('Ошибка! Попробуйте ещё раз.'));
+  });
+</script>
