@@ -59,16 +59,26 @@
     }
 }
 
-
-.divider-icon {
-    width: 7px;
-    height: 7px;
-    margin: 5px auto;
+.tiny-heart {
+    width: 8px;       /* Размер в 3 раза меньше предыдущего */
+    height: 8px;
+    margin: 5px auto; /* Уменьшенные отступы */
+    opacity: 0.5;
     display: block;
-    opacity: 0.7;
-    transition: transform 0.3s;
+    transition: all 0.3s;
 }
 
-.divider-icon:hover {
-    transform: scale(1.2);
+/* Мини-анимация при наведении */
+.tiny-heart:hover {
+    transform: scale(1.3);
+    opacity: 0.8;
+}
+
+/* Для мобильных */
+@media (max-width: 600px) {
+    .tiny-heart {
+        width: 6px;
+        height: 6px;
+        margin: 3px auto;
+    }
 }
