@@ -61,9 +61,9 @@
 
 /* Стили для разделительных иконок */
 .divider-icon {
-    width: 17px;
-    height: 17px;
-    margin: 7px auto;
+    width: 10px;
+    height: 10px;
+    margin: 5px auto;
     display: block;
     opacity: 0.7;
 }
@@ -82,9 +82,9 @@
 
 @media (max-width: 600px) {
     .divider-icon {
-        width: 13px;
-        height: 13px;
-        margin: 5px auto;
+        width: 7px;
+        height: 7px;
+        margin: 3px auto;
     }
     
     .wish-item {
@@ -94,5 +94,99 @@
     .wish-item p {
         font-size: 0.9rem;
         padding: 0 15px;
+    }
+}
+.dress-code-container {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.dress-code-description {
+    color: #5a2a3a;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.color-palette-wrapper {
+    display: grid;
+    gap: 30px;
+}
+
+.gender-section {
+    text-align: center;
+}
+
+.gender-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.gender-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+}
+
+.gender-title.female::after { background: #ff8095; }
+.gender-title.male::after { background: #6c8cff; }
+
+.color-palette {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.color-box {
+    width: 130px;
+    height: 130px;
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.color-box:hover {
+    transform: translateY(-5px);
+}
+
+.color-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.9);
+    padding: 8px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .dress-code-container {
+        padding: 20px;
+        margin: 20px 15px;
+    }
+    
+    .color-box {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .color-label {
+        font-size: 0.8em;
+        padding: 5px;
     }
 }
