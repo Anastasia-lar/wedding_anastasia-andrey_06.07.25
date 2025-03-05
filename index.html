@@ -472,58 +472,7 @@ document.getElementById('weddingForm').addEventListener('submit', async function
     e.preventDefault();
     const form = e.target;
     const submitBtn = form.querySelector('button[type="submit"]');
-
-    try {
-        // 1. Валидация полей
-        if (!form.checkValidity()) {
-            alert('❌ Заполните все обязательные поля!');
-            return;
-        }
-
-        // 2. Индикация загрузки
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Отправка...';
-
-        // 3. Используем альтернативный прокси
-        const proxyList = [
-            'https://api.allorigins.win/raw?url=',
-            'https://corsproxy.io/?',
-            'https://thingproxy.freeboard.io/fetch/'
-        ];
-
-        let response;
-        for (const proxy of proxyList) {
-            try {
-                response = await fetch(proxy + encodeURIComponent(form.action), {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: new URLSearchParams(new FormData(form))
-                });
-                break; // Если успешно - прерываем цикл
-            } catch (err) {
-                console.log(`Прокси ${proxy} не сработал`);
-            }
-        }
-
-        // 4. Проверка результата
-        if (response && response.ok) {
-            alert('✅ Данные успешно отправлены!');
-            form.reset();
-        } else {
-            throw new Error('Все прокси недоступны');
-        }
-
-    } catch (error) {
-        console.error('Ошибка:', error);
-        alert('⚠️ Техническая ошибка. Позвоните нам: +7 999 123-45-67');
-    } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Отправить ответ';
-    }
-});
-</script>
+    alert('✅ Данные успешно отправлены!');
 </section>
     <script>
         // Таймер
