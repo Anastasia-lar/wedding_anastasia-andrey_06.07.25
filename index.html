@@ -444,7 +444,8 @@
     </section>
 
     <!-- Страница 6 -->
-    <section class="page">
+    <!-- Страница 6 -->
+<section class="page">
     <div class="hearts-container">
         <!-- SVG-сердечки -->
     </div>
@@ -497,113 +498,7 @@
         </div>
     </div>
 </section>
-
-<style>
-/* Базовые стили */
-.dresscode-wrapper {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.gender-block {
-    margin: 40px 0;
-}
-
-.gender-header {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.3rem;
-    text-align: center;
-    margin-bottom: 25px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.gender-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
-}
-
-.female-color { color: #c94560; }
-.female-color::after { background: #c94560; }
-
-.male-color { color: #2a5c9e; }
-.male-color::after { background: #2a5c9e; }
-
-.color-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.color-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s;
-}
-
-.color-card:hover {
-    transform: translateY(-5px);
-}
-
-.color-swatch {
-    width: 100px;
-    height: 100px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.color-name {
-    margin-top: 12px;
-    font-size: 0.9rem;
-    color: #555;
-    text-align: center;
-}
-
-/* Цветовые коды */
-.female-1 { background: #F3E8D2; }
-.female-2 { background: #F3D8D2; }
-.female-3 { background: #FFE9EC; }
-.male-1 { background: #EDF3D2; }
-.male-2 { background: #D2DDF3; }
-.male-3 { background: #E8F5E9; }
-
-/* Мобильная адаптация */
-@media (max-width: 768px) {
-    .color-swatch {
-        width: 80px;
-        height: 80px;
-    }
     
-    .gender-header {
-        font-size: 1.1rem;
-        margin-bottom: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .color-swatch {
-        width: 70px;
-        height: 70px;
-        border-radius: 12px;
-    }
-    
-    .color-grid {
-        gap: 15px;
-    }
-    
-    .color-name {
-        font-size: 0.8rem;
-    }
-}
-</style>
     <!-- Страница 7 -->
     <section class="page">
         <div class="hearts-container">
