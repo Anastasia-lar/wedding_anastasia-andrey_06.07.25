@@ -461,33 +461,67 @@
             <label><input type="checkbox" name="entry.1507861999" value="Джин"> Джин</label>
         </div>
     </div>
-
     <button type="submit">Отправить ответ</button>
 </form>
         <p style="margin-top: 20px; font-size: 0.9em;">
             Пожалуйста, подтвердите своё присутствие<br>
             не позднее 1 июня!
         </p>
-    <script>
-document.getElementById('weddingForm').addEventListener('submit', function(e) {
+   <script>
+document.getElementById('weddingForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const form = e.target;
-    const formData = new FormData(form);
-    
-    fetch(form.action, {
-        method: 'POST',
-        body: new URLSearchParams(formData),
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    try {
+        // 1. Валидация полей
+        if (!form.checkValidity()) {
+            alert('❌ Заполните все обязательные поля!');
+            return;
         }
-    })
-    .then(() => {
-        alert('Спасибо за ответ! Мы вас ждём!');
-        form.reset();
-    })
-    .catch(error => {
-        alert('Ошибка отправки. Пожалуйста, свяжитесь с нами напрямую.');
-    });
+
+        // 2. Индикация загрузки
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Отправка...';
+
+        // 3. Используем альтернативный прокси
+        const proxyList = [
+            'https://api.allorigins.win/raw?url=',
+            'https://corsproxy.io/?',
+            'https://thingproxy.freeboard.io/fetch/'
+        ];
+
+        let response;
+        for (const proxy of proxyList) {
+            try {
+                response = await fetch(proxy + encodeURIComponent(form.action), {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams(new FormData(form))
+                });
+                break; // Если успешно - прерываем цикл
+            } catch (err) {
+                console.log(`Прокси ${proxy} не сработал`);
+            }
+        }
+
+        // 4. Проверка результата
+        if (response && response.ok) {
+            alert('✅ Данные успешно отправлены!');
+            form.reset();
+        } else {
+            throw new Error('Все прокси недоступны');
+        }
+
+    } catch (error) {
+        console.error('Ошибка:', error);
+        alert('⚠️ Техническая ошибка. Позвоните нам: +7 999 123-45-67');
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Отправить ответ';
+    }
 });
 </script>
 </section>
