@@ -445,50 +445,143 @@
 
     <!-- Страница 6 -->
     <section class="page">
-        <div class="hearts-container">
-            <!-- Аналогичные сердечки -->
-        </div>
-         <h2>Дресс-код</h2>
-    <p style="margin: 15px 0; max-width: 500px;">
-        Нам будет очень приятно, если вы учтете наши пожелания<br>
-        и при выборе одежды предпочтете вечерние наряды<br>
-        в представленной ниже гамме
-    </p>
+    <div class="hearts-container">
+        <!-- сердечки -->
+    </div>
+    
+    <h2>Дресс-код</h2>
+    
+    <div class="dresscode-content">
+        <p class="dresscode-description">
+            Нам будет очень приятно, если вы учтете наши пожелания<br> 
+            и при выборе одежды предпочтете вечерние наряды<br>
+            в представленной ниже гамме
+        </p>
 
-    <!-- Для девушек -->
-    <h3 style="color: #c94560; margin: 25px 0 15px; font-family: 'Montserrat', sans-serif;">Для девушек</h3>
-    <div class="color-container">
-        <div class="color-item">
-            <div class="color-box" style="background: #F3E8D2"></div>
-            <p class="color-label">Пудровый</p>
+        <!-- Для девушек -->
+        <div class="gender-section">
+            <h3 class="gender-title female">Для девушек</h3>
+            <div class="color-palette">
+                <div class="color-item">
+                    <div class="color-box female-1"></div>
+                    <span class="color-label">Пудровый</span>
+                </div>
+                <div class="color-item">
+                    <div class="color-box female-2"></div>
+                    <span class="color-label">Персиковый</span>
+                </div>
+                <div class="color-item">
+                    <div class="color-box female-3"></div>
+                    <span class="color-label">Розовый</span>
+                </div>
+            </div>
         </div>
-        <div class="color-item">
-            <div class="color-box" style="background: #F3D8D2"></div>
-            <p class="color-label">Персиковый</p>
-        </div>
-        <div class="color-item">
-            <div class="color-box" style="background: #FFE9EC"></div>
-            <p class="color-label">Розовый</p>
+
+        <!-- Для мужчин -->
+        <div class="gender-section">
+            <h3 class="gender-title male">Для мужчин</h3>
+            <div class="color-palette">
+                <div class="color-item">
+                    <div class="color-box male-1"></div>
+                    <span class="color-label">Оливковый</span>
+                </div>
+                <div class="color-item">
+                    <div class="color-box male-2"></div>
+                    <span class="color-label">Голубой</span>
+                </div>
+                <div class="color-item">
+                    <div class="color-box male-3"></div>
+                    <span class="color-label">Мятный</span>
+                </div>
+            </div>
         </div>
     </div>
+</section>
 
-    <!-- Для мужчин -->
-    <h3 style="color: #2a5c9e; margin: 35px 0 15px; font-family: 'Montserrat', sans-serif;">Для мужчин</h3>
-    <div class="color-container">
-        <div class="color-item">
-            <div class="color-box" style="background: #EDF3D2"></div>
-            <p class="color-label">Оливковый</p>
-        </div>
-        <div class="color-item">
-            <div class="color-box" style="background: #D2DDF3"></div>
-            <p class="color-label">Голубой</p>
-        </div>
-        <div class="color-item">
-            <div class="color-box" style="background: #E8F5E9"></div>
-            <p class="color-label">Мятный</p>
-        </div>
-    </div>
-    </section>
+<style>
+/* Основные стили */
+.dresscode-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.gender-section {
+    margin: 30px 0;
+}
+
+.gender-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.gender-title.female { color: #c94560; }
+.gender-title.male { color: #2a5c9e; }
+
+.color-palette {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.color-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.color-box {
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.color-label {
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
+}
+
+/* Цвета */
+.female-1 { background: #F3E8D2; }
+.female-2 { background: #F3D8D2; }
+.female-3 { background: #FFE9EC; }
+.male-1 { background: #EDF3D2; }
+.male-2 { background: #D2DDF3; }
+.male-3 { background: #E8F5E9; }
+
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+    .color-box {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .color-label {
+        font-size: 0.8em;
+    }
+    
+    .gender-section {
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .color-box {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .color-palette {
+        gap: 10px;
+    }
+}
+</style>
 
     <!-- Страница 7 -->
     <section class="page">
