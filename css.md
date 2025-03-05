@@ -62,8 +62,8 @@
     <style>
         /* Стили для увеличенных сердечек */
         .tiny-heart {
-            width: 24px;    /* Увеличение в 3 раза */
-            height: 24px;   /* Было 8px */
+            width: 24px !important;    /* Увеличение в 3 раза */
+            height: 24px !important;   /* Было 8px */
             margin: 15px auto; /* Увеличенные отступы */
             opacity: 0.7;
             display: block;
