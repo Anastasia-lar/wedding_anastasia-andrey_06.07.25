@@ -61,9 +61,9 @@
 
 
 .divider-icon {
-    width: 17px;
-    height: 17px;
-    margin: 10px auto;
+    width: 7px;
+    height: 7px;
+    margin: 5px auto;
     display: block;
     opacity: 0.7;
     transition: transform 0.3s;
