@@ -61,9 +61,9 @@
 
 /* Стили для разделительных иконок */
 .divider-icon {
-    width: 18px;
-    height: 18px;
-    margin: 10px auto;
+    width: 17px;
+    height: 17px;
+    margin: 7px auto;
     display: block;
     opacity: 0.7;
 }
@@ -82,9 +82,9 @@
 
 @media (max-width: 600px) {
     .divider-icon {
-        width: 40px;
-        height: 40px;
-        margin: 15px auto;
+        width: 13px;
+        height: 13px;
+        margin: 5px auto;
     }
     
     .wish-item {
