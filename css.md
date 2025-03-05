@@ -58,18 +58,17 @@
         opacity: 0.3;
     }
 }
+
+
 .divider-icon {
-    width: 17px;  /* Было 50px */
-    height: 17px; /* Было 50px */
-    margin: 7px auto; /* Уменьшенные отступы */
+    width: 17px;
+    height: 17px;
+    margin: 10px auto;
     display: block;
     opacity: 0.7;
+    transition: transform 0.3s;
 }
 
-@media (max-width: 600px) {
-    .divider-icon {
-        width: 13px;   /* Было 40px */
-        height: 13px;  /* Было 40px */
-        margin: 5px auto;
-    }
+.divider-icon:hover {
+    transform: scale(1.2);
 }
