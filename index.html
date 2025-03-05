@@ -415,62 +415,54 @@
         <form>
             <h2>Анкета гостя</h2>
     <div style="margin: 20px 0;">
-        <form id="weddingForm" 
-              action="https://docs.google.com/forms/d/e/1FAIpQLSdPuCt6elfdk18m0eiQCdhewUCHnNg6EUwChpSLLAG_zjjQbQ/formResponse" 
-              method="POST"
-              enctype="application/x-www-form-urlencoded">
+        <form id="weddingForm" action="https://formspree.io/f/xgvawwdd" method="POST">
+    <!-- Поле для имени -->
+    <div class="form-group">
+        <label>Ваше имя и фамилия</label>
+        <input type="text" 
+               name="guest_name" 
+               placeholder="Например: Иван и Мария Петровы" 
+               required>
+    </div>
 
-            <!-- Поле для имени -->
-            <div class="form-group">
-                <label class="form-label">Ваше имя и фамилия</label>
-                <input type="text" 
-                       name="entry.1392839747"  <!-- Проверьте этот ID -->
-                       placeholder="Например: Иван и Мария Петровы" 
+           <!-- Подтверждение присутствия -->
+    <div class="form-group">
+        <label>Подтвердите присутствие:</label>
+        <div class="radio-group">
+            <label>
+                <input type="radio" 
+                       name="attendance" 
+                       value="Да, с удовольствием!" 
                        required>
-            </div>
+                Да, с удовольствием!
+            </label>
+            <label>
+                <input type="radio" 
+                       name="attendance" 
+                       value="К сожалению, нет">
+                К сожалению, нет
+            </label>
+        </div>
+    </div>
 
-            <!-- Подтверждение присутствия -->
-            <div class="form-group">
-                <label class="form-label">Подтвердите присутствие:</label>
-                <div class="radio-group">
-                    <label>
-                        <input type="radio" 
-                               name="entry.1189132374"  <!-- Проверьте этот ID -->
-                               value="Да, с удовольствием!" 
-                               required>
-                        Да, с удовольствием!
-                    </label>
-                    <label>
-                        <input type="radio" 
-                               name="entry.1189132374" 
-                               value="К сожалению, нет">
-                        К сожалению, нет
-                    </label>
-                </div>
-            </div>
+            <!-- Напитки (чекбоксы) -->
+    <div class="form-group">
+        <label>Напитки:</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="drinks" value="Шампанское"> Шампанское</label>
+            <label><input type="checkbox" name="drinks" value="Вино белое полусладкое"> Вино белое полусладкое</label>
+            <label><input type="checkbox" name="drinks" value="Вино белое сухое"> Вино белое сухое</label>
+            <label><input type="checkbox" name="drinks" value="Вино красное полусладкое"> Вино красное полусладкое</label>
+            <label><input type="checkbox" name="drinks" value="Вино красное сухое"> Вино красное сухое</label>
+            <label><input type="checkbox" name="drinks" value="Виски"> Виски</label>
+            <label><input type="checkbox" name="drinks" value="Коньяк"> Коньяк</label>
+            <label><input type="checkbox" name="drinks" value="Водка"> Водка</label>
+            <label><input type="checkbox" name="drinks" value="Джин"> Джин</label>
+            
+       </div>
+   </div>
 
-            <!-- Напитки -->
-            <div class="form-group">
-                <label class="form-label">Напитки:</label>
-                <div class="checkbox-group">
-                    <!-- Проверьте ID для каждого варианта -->
-                    <label><input type="checkbox" name="entry.610086267" value="Шампанское"> Шампанское</label>
-                    <label><input type="checkbox" name="entry.610086267" value="Вино белое полусладкое"> Вино белое полусладкое</label>
-                    <label><input type="checkbox" name="entry.610086267" value="Вино белое сухое"> Вино белое сухое</label>
-                    <label><input type="checkbox" name="entry.610086267" value="Вино красное полусладкое"> Вино красное полусладкое</label>
-                    <label><input type="checkbox" name="entry.610086267" value="Вино красное сухое"> Вино красное сухое</label>
-                    <label><input type="checkbox" name="entry.610086267" value="Виски"> Виски</label>
-                    <label><input type="checkbox" name="entry.610086267" value="Коньяк"> Коньяк</label>
-                    <label><input type="checkbox" name="entry.610086267" value="Водка"> Водка</label>
-                    <label><input type="checkbox" name="entry.610086267" value="Джин"> Джин</label>
-                </div>
-            </div>
-
-            <!-- Скрытые системные поля -->
-            <input type="hidden" name="fvv" value="1">
-            <input type="hidden" name="pageHistory" value="0">
-            <input type="hidden" name="fbzx" id="fbzxField" value="-9189793839984512345">
-
+          
             <button type="submit">Отправить ответ</button>
         </form>
         
@@ -479,88 +471,7 @@
             не позднее 1 июня!
         </p>
     </div>
-
-    <script>
-        // Функция для получения актуального fbzx
-        async function getCurrentFbzx() {
-            try {
-                const proxy = 'https://api.allorigins.win/get?url=';
-                const formUrl = encodeURIComponent(
-                    'https://docs.google.com/forms/d/e/1FAIpQLSdPuCt6elfdk18m0eiQCdhewUCHnNg6EUwChpSLLAG_zjjQbQ/viewform'
-                );
-                
-                const response = await fetch(proxy + formUrl);
-                const data = await response.json();
-                const text = data.contents;
-                const fbzxMatch = text.match(/name="fbzx" value="(-?\d+)"/);
-                return fbzxMatch ? fbzxMatch[1] : '-9189793839984512345';
-            } catch (error) {
-                console.error('Ошибка получения fbzx:', error);
-                return '-9189793839984512345';
-            }
-        }
-
-        // Обработчик отправки формы
-        document.getElementById('weddingForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const form = e.target;
-            const submitBtn = form.querySelector('button[type="submit"]');
-
-            try {
-                // Блокировка кнопки
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Отправка...';
-
-                // Динамическое обновление fbzx
-                const newFbzx = await getCurrentFbzx();
-                document.getElementById('fbzxField').value = newFbzx;
-
-                // Проверка валидации
-                if (!form.checkValidity()) {
-                    throw new Error('Заполните все обязательные поля');
-                }
-
-                // Отправка через прокси
-                const proxyList = [
-                    'https://corsproxy.io/?', 
-                    'https://api.codetabs.com/v1/proxy?quest=',
-                    'https://thingproxy.freeboard.io/fetch/'
-                ];
-
-                let response;
-                for (const proxy of proxyList) {
-                    try {
-                        response = await fetch(proxy + encodeURIComponent(form.action), {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/x-www-form-urlencoded',
-                                'Origin': window.location.origin
-                            },
-                            body: new URLSearchParams(new FormData(form))
-                        };
-                        break;
-                    } catch (err) {
-                        console.log(`Прокси ${proxy} не сработал`);
-                    }
-                }
-
-                // Проверка ответа
-                if (response && response.ok) {
-                    alert('✅ Данные успешно отправлены!');
-                    form.reset();
-                } else {
-                    throw new Error('Ошибка сервера');
-                }
-
-            } catch (error) {
-                console.error('Ошибка:', error);
-                alert(`⚠️ ${error.message}. Свяжитесь с нами: example@wedding.com`);
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Отправить ответ';
-            }
-        });
-    </script>
+            
 </section>
     <script>
         // Таймер
