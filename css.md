@@ -59,27 +59,40 @@
     }
 }
 
-        /* Стили для увеличенных сердечек */
-        .tiny-heart {
-            width: 24px !important;    /* Увеличение в 3 раза */
-            height: 24px !important;   /* Было 8px */
-            margin: 15px auto; /* Увеличенные отступы */
-            opacity: 0.7;
-            display: block;
-            transition: all 0.3s;
-            filter: drop-shadow(0 0 2px rgba(255,128,149,0.3));
-        }
+/* Стили для разделительных иконок */
+.divider-icon {
+    width: 50px;
+    height: 50px;
+    margin: 20px auto;
+    display: block;
+    opacity: 0.7;
+}
 
-        .tiny-heart:hover {
-            transform: scale(1.2);
-            opacity: 1;
-        }
+.wish-item {
+    margin: 30px 0;
+    padding: 15px 0;
+}
 
-        @media (max-width: 600px) {
-            .tiny-heart {
-                width: 18px;   /* Уменьшенная мобильная версия */
-                height: 18px;  /* (24px * 0.75) */
-                margin: 10px auto;
-            }
-        }
+.wish-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 400px;
+}
 
+@media (max-width: 600px) {
+    .divider-icon {
+        width: 40px;
+        height: 40px;
+        margin: 15px auto;
+    }
+    
+    .wish-item {
+        margin: 25px 0;
+    }
+    
+    .wish-item p {
+        font-size: 0.9rem;
+        padding: 0 15px;
+    }
+}
