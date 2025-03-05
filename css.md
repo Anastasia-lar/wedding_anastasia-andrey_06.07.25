@@ -59,26 +59,28 @@
     }
 }
 
-.tiny-heart {
-    width: 17px !important;
-    height: 17px !important;
-    margin: 10px auto; /* Уменьшенные отступы */
-    opacity: 0.5;
-    display: block;
-    transition: all 0.3s;
-}
+    <style>
+        /* Стили для увеличенных сердечек */
+        .tiny-heart {
+            width: 24px;    /* Увеличение в 3 раза */
+            height: 24px;   /* Было 8px */
+            margin: 15px auto; /* Увеличенные отступы */
+            opacity: 0.7;
+            display: block;
+            transition: all 0.3s;
+            filter: drop-shadow(0 0 2px rgba(255,128,149,0.3));
+        }
 
-/* Мини-анимация при наведении */
-.tiny-heart:hover {
-    transform: scale(1.3);
-    opacity: 0.8;
-}
+        .tiny-heart:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
 
-/* Для мобильных */
-@media (max-width: 600px) {
-    .tiny-heart {
-        width: 6px;
-        height: 6px;
-        margin: 3px auto;
-    }
-}
+        @media (max-width: 600px) {
+            .tiny-heart {
+                width: 18px;   /* Уменьшенная мобильная версия */
+                height: 18px;  /* (24px * 0.75) */
+                margin: 10px auto;
+            }
+        }
+
