@@ -56,6 +56,35 @@
             text-align: center;
             position: relative;
         }
+       .tiny-heart {
+            width: 8px;       /* Размер в 3 раза меньше предыдущего */
+            height: 8px;
+            margin: 5px auto; /* Уменьшенные отступы */
+            opacity: 0.5;
+            display: block;
+            transition: all 0.3s;
+        }
+
+    /* Мини-анимация при наведении */
+      .tiny-heart:hover {
+            transform: scale(1.3);
+            opacity: 0.8;
+        }
+
+/* Для мобильных */
+@media (max-width: 600px) {
+    .tiny-heart {
+        width: 6px;
+        height: 6px;
+        margin: 3px auto;
+    }
+}
+
+
+
+
+
+        
             /* Анимация сердечек - улучшенная версия */
         <!-- Вставьте этот блок с сердечками в КАЖДУЮ секцию .page -->
 <div class="hearts-container">
