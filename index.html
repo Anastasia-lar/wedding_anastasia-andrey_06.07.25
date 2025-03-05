@@ -478,7 +478,7 @@ document.getElementById('weddingForm').addEventListener('submit', async function
         submitBtn.textContent = 'Отправка...';
 
         // Используем CORS-прокси
-        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
         const response = await fetch(proxyUrl + form.action, {
             method: 'POST',
             headers: {
