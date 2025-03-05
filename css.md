@@ -61,9 +61,9 @@
 
 /* Стили для разделительных иконок */
 .divider-icon {
-    width: 50px;
-    height: 50px;
-    margin: 20px auto;
+    width: 18px;
+    height: 18px;
+    margin: 10px auto;
     display: block;
     opacity: 0.7;
 }
