@@ -60,7 +60,7 @@
 }
 
 .tiny-heart {
-    width: 17px !important;       /* Размер в 3 раза меньше предыдущего */
+    width: 17px !important;
     height: 17px !important;
     margin: 10px auto; /* Уменьшенные отступы */
     opacity: 0.5;
