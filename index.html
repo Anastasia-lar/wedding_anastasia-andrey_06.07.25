@@ -412,65 +412,71 @@
         <div class="hearts-container">
             <!-- Аналогичные сердечки -->
         </div>
-        <form>
-            <h2>Анкета гостя</h2>
-    <div style="margin: 20px 0;">
-        <form id="weddingForm" action="https://formspree.io/f/xgvawwdd" method="POST">
+        <div style="margin: 20px 0;">
+  <!-- Удален лишний открывающий тег <form> в начале -->
+  <form id="weddingForm" action="https://formspree.io/f/xgvawwdd" method="POST">
+    <h2>Анкета гостя</h2> <!-- Перенесено внутрь формы -->
+
     <!-- Поле для имени -->
     <div class="form-group">
-        <label>Ваше имя и фамилия</label>
-        <input type="text" 
-               name="guest_name" 
-               placeholder="Например: Иван и Мария Петровы" 
-               required>
+      <label>Ваше имя и фамилия</label>
+      <input 
+        type="text" 
+        name="guest_name" 
+        placeholder="Например: Иван и Мария Петровы" 
+        required
+      >
     </div>
 
-           <!-- Подтверждение присутствия -->
+    <!-- Подтверждение присутствия -->
     <div class="form-group">
-        <label>Подтвердите присутствие:</label>
-        <div class="radio-group">
-            <label>
-                <input type="radio" 
-                       name="attendance" 
-                       value="Да, с удовольствием!" 
-                       required>
-                Да, с удовольствием!
-            </label>
-            <label>
-                <input type="radio" 
-                       name="attendance" 
-                       value="К сожалению, нет">
-                К сожалению, нет
-            </label>
-        </div>
+      <label>Подтвердите присутствие:</label>
+      <div class="radio-group">
+        <label>
+          <input 
+            type="radio" 
+            name="attendance" 
+            value="Да, с удовольствием!" 
+            required
+          >
+          Да, с удовольствием!
+        </label>
+        <label>
+          <input 
+            type="radio" 
+            name="attendance" 
+            value="К сожалению, нет"
+          >
+          К сожалению, нет
+        </label>
+      </div>
     </div>
 
-            <!-- Напитки (чекбоксы) -->
+    <!-- Напитки -->
     <div class="form-group">
-        <label>Напитки:</label>
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="drinks" value="Шампанское"> Шампанское</label>
-            <label><input type="checkbox" name="drinks" value="Вино белое полусладкое"> Вино белое полусладкое</label>
-            <label><input type="checkbox" name="drinks" value="Вино белое сухое"> Вино белое сухое</label>
-            <label><input type="checkbox" name="drinks" value="Вино красное полусладкое"> Вино красное полусладкое</label>
-            <label><input type="checkbox" name="drinks" value="Вино красное сухое"> Вино красное сухое</label>
-            <label><input type="checkbox" name="drinks" value="Виски"> Виски</label>
-            <label><input type="checkbox" name="drinks" value="Коньяк"> Коньяк</label>
-            <label><input type="checkbox" name="drinks" value="Водка"> Водка</label>
-            <label><input type="checkbox" name="drinks" value="Джин"> Джин</label>
-            
-       </div>
-   </div>
-
-          
-            <button type="submit">Отправить ответ</button>
-        </form>
-        
-        <p style="margin-top: 20px; font-size: 0.9em;">
-            Пожалуйста, подтвердите своё присутствие<br>
-            не позднее 1 июня!
-        </p>
+      <label>Напитки:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="drinks" value="Шампанское"> Шампанское</label>
+        <label><input type="checkbox" name="drinks" value="Вино белое полусладкое"> Вино белое полусладкое</label>
+        <label><input type="checkbox" name="drinks" value="Вино белое сухое"> Вино белое сухое</label>
+        <label><input type="checkbox" name="drinks" value="Вино красное полусладкое"> Вино красное полусладкое</label>
+        <label><input type="checkbox" name="drinks" value="Вино красное сухое"> Вино красное сухое</label>
+        <label><input type="checkbox" name="drinks" value="Виски"> Виски</label>
+        <label><input type="checkbox" name="drinks" value="Коньяк"> Коньяк</label>
+        <label><input type="checkbox" name="drinks" value="Водка"> Водка</label>
+        <label><input type="checkbox" name="drinks" value="Джин"> Джин</label>
+      </div>
     </div>
+
+    <button type="submit">Отправить ответ</button>
+  </form> <!-- Закрывающий тег формы -->
+
+  <!-- Этот текст должен быть ВНЕ формы -->
+  <p style="margin-top: 20px; font-size: 0.9em;">
+    Пожалуйста, подтвердите своё присутствие<br>
+    не позднее 1 июня!
+  </p>
+</div>
             
 </section>
     <script>
