@@ -58,40 +58,18 @@
         opacity: 0.3;
     }
 }
-/* Стили для разделительных иконок */
 .divider-icon {
-    width: 50px;
-    height: 50px;
-    margin: 20px auto;
+    width: 17px;  /* Было 50px */
+    height: 17px; /* Было 50px */
+    margin: 7px auto; /* Уменьшенные отступы */
     display: block;
     opacity: 0.7;
 }
 
-.wish-item {
-    margin: 30px 0;
-    padding: 15px 0;
-}
-
-.wish-item p {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 0 auto;
-    max-width: 400px;
-}
-
 @media (max-width: 600px) {
     .divider-icon {
-        width: 40px;
-        height: 40px;
-        margin: 15px auto;
-    }
-    
-    .wish-item {
-        margin: 25px 0;
-    }
-    
-    .wish-item p {
-        font-size: 0.9rem;
-        padding: 0 15px;
+        width: 13px;   /* Было 40px */
+        height: 13px;  /* Было 40px */
+        margin: 5px auto;
     }
 }
