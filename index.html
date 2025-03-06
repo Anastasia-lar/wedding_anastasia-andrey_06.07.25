@@ -125,44 +125,40 @@
         }
         
         /* Цветовые коды */
-        .female-1 { background: #946E55; }
-        .female-2 { background: #C8B19E; }
-        .female-3 { background: #E0D9D2; }
-        .female-4 { background: #F4F4F0; }
-        .male-1 { background: #383E42; }
-        .male-2 { background: #8E8E8E; }
-        .male-3 { background: #F0E4DB; }
-        .male-4 { background: #FFFCFC; }
-        
-        /* Мобильная адаптация */
-        @media (max-width: 768px) {
-            .color-swatch {
-                width: 80px;
-                height: 80px;
-            }
-            
-            .gender-header {
-                font-size: 1.1rem;
-                margin-bottom: 20px;
-            }
+        .color-grid-three-col {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    @media (max-width: 768px) {
+        .color-grid-three-col {
+            grid-template-columns: repeat(3, 1fr);
         }
-        
-        @media (max-width: 480px) {
-            .color-swatch {
-                width: 70px;
-                height: 70px;
-                border-radius: 12px;
-            }
-            
-            .color-grid {
-                gap: 15px;
-            }
-            
-            .color-name {
-                font-size: 0.8rem;
-            }
+    }
+    
+    @media (max-width: 480px) {
+        .color-grid-three-col {
+            grid-template-columns: repeat(2, 1fr);
         }
-
+    }
+    
+    /* Новые цветовые коды */
+    .color-1 { background: #946E55; }
+    .color-2 { background: #C8B19E; }
+    .color-3 { background: #E0D9D2; }
+    .color-4 { background: #F4F4F0; }
+    .color-5 { background: #383E42; }
+    .color-6 { background: #8E8E8E; }
+    .color-7 { background: #F0E4DB; }
+    .color-8 { background: #FFFCFC; }
+    .color-9 { background: #E3CDBF; }
+    .color-10 { background: #9E6D5C; }
+    .color-11 { background: #C4C2BC; }
+    .color-12 { background: #F8F4EC; }
 
         
   /* Увеличены размеры и добавлены вариации */
@@ -623,54 +619,59 @@
             и при выборе одежды предпочтете вечерние наряды<br>
             в представленной ниже гамме
         </p>
-
-        <!-- Для девушек -->
-        <div class="gender-block">
-            <h3 class="gender-header female-color">Для девушек</h3>
-            <div class="color-grid">
-                <div class="color-card">
-                    <div class="color-swatch female-1"></div>
-                    <span class="color-name">Коричневый/<br>какао</span>
-                </div>
-                <div class="color-card">
-                    <div class="color-swatch female-2"></div>
-                    <span class="color-name">Песочный</span>
-                </div>
-                <div class="color-card">
-                    <div class="color-swatch female-3"></div>
-                    <span class="color-name">Льняной</span>
-                </div>
-                <div class="color-grid">
-                <div class="color-card">
-                    <div class="color-swatch female-4"></div>
-                    <span class="color-name">Бежевый/<br>белый</span>
-                </div>
+        <div class="color-grid-three-col">
+            <div class="color-card">
+                <div class="color-swatch color-1"></div>
+                <span class="color-name">Коричневый/<br>какао</span>
             </div>
-        </div>
-
-        <!-- Для мужчин -->
-        <div class="gender-block">
-            <h3 class="gender-header male-color">Для мужчин</h3>
-            <div class="color-grid">
-                <div class="color-card">
-                    <div class="color-swatch male-1"></div>
-                    <span class="color-name">Черный/<br>графит</span>
-                </div>
-                <div class="color-card">
-                    <div class="color-swatch male-2"></div>
-                    <span class="color-name">Серый</span>
-                </div>
-                <div class="color-card">
-                    <div class="color-swatch male-3"></div>
-                    <span class="color-name">Бежевый</span>
-                </div>
-                <div class="color-card">
-                    <div class="color-swatch male-4"></div>
-                    <span class="color-name">Белый</span>
-                </div>
+            <div class="color-card">
+                <div class="color-swatch color-2"></div>
+                <span class="color-name">Песочный</span>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch color-3"></div>
+                <span class="color-name">Льняной</span>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch color-4"></div>
+                <span class="color-name">Бежевый/<br>белый</span>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch color-5"></div>
+                <span class="color-name">Черный/<br>графит</span>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch color-6"></div>
+                <span class="color-name">Серый</span>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch color-7"></div>
+                <span class="color-name">Бежевый</span>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch color-8"></div>
+                <span class="color-name">Белый</span>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch color-9"></div>
+                <span class="color-name">Пудровый</span>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch color-10"></div>
+                <span class="color-name">Терракотовый</span>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch color-11"></div>
+                <span class="color-name">Пепельный</span>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch color-12"></div>
+                <span class="color-name">Молочный</span>
             </div>
         </div>
     </div>
+
+       
 </section>
     
     <!-- Страница 7 -->
