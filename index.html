@@ -165,82 +165,78 @@
 
 
         
-      /* Удаляем старые стили сердечек и добавляем новые */
+  /* Увеличены размеры и добавлены вариации */
+.floating-heart:nth-child(1) { 
+    animation-delay: 0s; 
+    width: 55px; 
+    animation-duration: 7s;
+}
+.floating-heart:nth-child(2) { 
+    animation-delay: 1.5s; 
+    width: 70px; 
+    animation-duration: 9s;
+}
+.floating-heart:nth-child(3) { 
+    animation-delay: 3s; 
+    width: 50px; 
+    animation-duration: 6s;
+}
+.floating-heart:nth-child(4) { 
+    animation-delay: 4.5s; 
+    width: 65px; 
+    animation-duration: 8s;
+}
 
-    .hearts-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 1;
-        display: flex;
-        justify-content: space-between;
+/* Новая анимация с вращением и изменением прозрачности */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(-15deg) scale(0.9);
+        opacity: 0;
     }
-    
-    .heart-side {
-        position: relative;
-        width: 15%;
-        height: 100%;
+    20% {
+        opacity: 0.4;
     }
-    
-    .floating-heart {
-        position: absolute;
+    50% {
+        transform: translateY(-100px) rotate(15deg) scale(1.1);
+        opacity: 0.5;
+    }
+    80% {
         opacity: 0.3;
-        animation: pulse 4s ease-in-out infinite;
-        filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
-        width: 40px;
-        height: 40px;
     }
-    
-    @keyframes pulse {
-        0%, 100% {
-            transform: scale(0.8);
-            opacity: 0.3;
-        }
-        50% {
-            transform: scale(1.2);
-            opacity: 0.5;
-        }
+    100% {
+        transform: translateY(-200px) rotate(30deg) scale(0.8);
+        opacity: 0;
     }
-    
-    /* Позиции для левой стороны */
-    .heart-left-1 { top: 10%; left: 5%; animation-delay: 0s; }
-    .heart-left-2 { top: 30%; left: 15%; animation-delay: 1s; }
-    .heart-left-3 { top: 50%; left: 5%; animation-delay: 2s; }
-    .heart-left-4 { top: 70%; left: 10%; animation-delay: 3s; }
-    
-    /* Позиции для правой стороны */
-    .heart-right-1 { top: 15%; right: 5%; animation-delay: 0.5s; }
-    .heart-right-2 { top: 35%; right: 15%; animation-delay: 1.5s; }
-    .heart-right-3 { top: 55%; right: 5%; animation-delay: 2.5s; }
-    .heart-right-4 { top: 75%; right: 10%; animation-delay: 3.5s; }
-    
-    /* Мобильная версия */
-    @media (max-width: 768px) {
-        .floating-heart {
-            width: 30px;
-            height: 30px;
-            opacity: 0.25;
-        }
-        
-        .heart-left-1 { left: 2%; }
-        .heart-left-2 { left: 8%; }
-        .heart-right-1 { right: 2%; }
-        .heart-right-2 { right: 8%; }
+}
+
+/* Позиции для мобильных устройств */
+@media (max-width: 600px) {
+    .floating-heart { 
+        width: 40px !important; /* Уменьшенный размер для мобилок */
+        opacity: 0.25;
     }
-    
-    @media (max-width: 480px) {
-        .floating-heart {
-            width: 25px;
-            height: 25px;
-        }
-    }      
+    .hearts-container {
+        display: block; /* Показываем на мобильных */
+    }
+}
 
+/* Новые позиции с большим разбросом */
+.heart-pos-1 { left: 5%; top: 10%; animation-name: float-left; }
+.heart-pos-2 { right: 5%; top: 15%; animation-name: float-right; }
+.heart-pos-3 { left: 20%; bottom: 15%; animation-name: float-left; }
+.heart-pos-4 { right: 25%; bottom: 20%; animation-name: float-right; }
 
+/* Разные направления движения */
+@keyframes float-left {
+    0% { transform: translateX(0) translateY(0) rotate(-15deg); }
+    100% { transform: translateX(-50px) translateY(-200px) rotate(25deg); }
+}
 
-        
+@keyframes float-right {
+    0% { transform: translateX(0) translateY(0) rotate(15deg); }
+    100% { transform: translateX(50px) translateY(-200px) rotate(-25deg); }
+}
+
 
         /* Первая страница */
         .header-page {
