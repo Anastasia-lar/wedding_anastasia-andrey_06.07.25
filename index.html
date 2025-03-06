@@ -403,23 +403,21 @@
 
         /* Адаптивность */
         @media (max-width: 600px) {
-            .form-label {
-                font-size: 1.1rem;
-            }
-    
             .checkbox-group {
-                columns: 1;
-                max-width: 300px;
+                width: 100%;
+                align-items: flex-start !important;
+                max-width: 250px !important;
+                margin: 0 auto !important;
             }
             
             input[type="text"] {
-                width: 90%;
-                font-size: 0.9rem;
+                max-width: 100% !important;
             }
             
             button {
-                width: 90%;
-                margin: 15px auto;
+                width: 100%;
+                max-width: 250px;
+                padding: 12px !important;
             }
         }
     </style>
@@ -694,100 +692,108 @@
                  class="floating-heart heart-pos-4">
         </div>
        
-        <div style="margin: 20px 0; width: 100%;">
-            <form id="weddingForm" action="https://formspree.io/f/xgvawwdd" method="POST">
-                <h2 style="font-size: 2rem; margin-bottom: 25px; color: #c94560;">Анкета гостя</h2>
-                
+        <div style="margin: 20px 0; width: 100%; max-width: 500px; padding: 0 15px;">
+            <form id="weddingForm" action="https://formspree.io/f/xgvawwdd" method="POST" style="margin: 0 auto;">
+                <h2 style="font-size: 2rem; margin-bottom: 25px; color: #c94560; text-align: center;">Анкета гостя</h2>
+    
                 <!-- Поле для имени -->
-                <div class="form-group">
-                <label class="form-label">Ваше имя и фамилия<br>
-                    <span style="font-size: 0.9rem; color: #777;">(если вы придёте с парой, укажите и её имя)</span>
-                </label>
-                <input type="text" 
-                       name="guest_name" 
-                       placeholder="Например: Мария Петрова или Иван и Анна Смирновы"
-                       style="font-size: 0.95rem; padding: 10px;"
-                       required>
-            </div>
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <label class="form-label" style="display: block; text-align: center; font-size: 1.1rem; margin-bottom: 10px;">
+                        Ваше имя и фамилия<br>
+                        <span style="font-size: 0.9rem; color: #777;">(если вы придёте с парой, укажите и её имя)</span>
+                    </label>
+                    <input type="text" 
+                           name="guest_name" 
+                           placeholder="Например: Мария Петрова и Иван Смирнов"
+                           style="display: block; width: 100%; max-width: 300px; margin: 0 auto; padding: 10px; font-size: 0.95rem; border: 2px solid #ffb6c1; border-radius: 8px;"
+                           required>
+                </div>
 
             <!-- Подтверждение присутствия -->
-            <div class="form-group">
-                <label class="form-label">Подтвердите участие:</label>
-                <div class="radio-group" style="gap: 20px; justify-content: center;">
+            <div class="form-group" style="margin-bottom: 30px;">
+                <label class="form-label" style="display: block; text-align: center; font-size: 1.1rem; margin-bottom: 15px;">
+                    Подтвердите присутствие:
+                </label>
+                <div class="radio-group" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
                     <label style="font-size: 1rem;">
-                        <input type="radio" name="attendance" 
-                               value="Да, с удовольствием!" required>
-                        <span style="font-size: 0.95rem;">Приду</span>
+                        <input type="radio" name="attendance" value="Да, с удовольствием!" required>
+                        <span style="font-size: 0.95rem;">Да, с удовольствием!</span>
                     </label>
                     <label style="font-size: 1rem;">
-                        <input type="radio" name="attendance" 
-                               value="К сожалению, нет">
-                        <span style="font-size: 0.95rem;">Не смогу</span>
+                        <input type="radio" name="attendance" value="К сожалению, нет">
+                        <span style="font-size: 0.95rem;">К сожалению, нет</span>
                     </label>
                 </div>
             </div>
 
             <!-- Напитки -->
             <div class="form-group">
-                <label class="form-label">Предпочтения в напитках:</label>
-                <div class="checkbox-group" style="columns: 2; gap: 15px;">
-                    <!-- Уменьшаем размер чекбоксов -->
-                    <label style="font-size: 0.9rem;">
-                        <input type="checkbox" name="drinks" value="Шампанское" 
-                               style="transform: scale(0.9);">
+                <label class="form-label" style="display: block; text-align: center; font-size: 1.1rem; margin-bottom: 15px;">
+                    Предпочтения в напитках:
+                </label>
+                <div class="checkbox-group" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                    <label style="font-size: 0.9rem; width: 100%; max-width: 200px;">
+                        <input type="checkbox" name="drinks" value="Шампанское" style="transform: scale(0.9); margin-right: 8px;">
                         Шампанское
                     </label>
-                        <input type="checkbox" name="drinks" value="Вино белое полусладкое" 
-                               style="transform: scale(0.9);">
+                    <label style="font-size: 0.9rem; width: 100%; max-width: 200px;">
+                        <input type="checkbox" name="drinks" value="Вино белое полусладкое" style="transform: scale(0.9); margin-right: 8px;">
                         Вино белое полусладкое
                     </label>
-                        <input type="checkbox" name="drinks" value="Вино белое сухое" 
-                               style="transform: scale(0.9);">
+                    <label style="font-size: 0.9rem; width: 100%; max-width: 200px;">
+                        <input type="checkbox" name="drinks" value="Вино белое сухое" style="transform: scale(0.9); margin-right: 8px;">
                         Вино белое сухое
                     </label>
-                        <input type="checkbox" name="drinks" value="Вино красное полусладкое" 
-                               style="transform: scale(0.9);">
+                    <label style="font-size: 0.9rem; width: 100%; max-width: 200px;">
+                        <input type="checkbox" name="drinks" value="Вино красное полусладкое" style="transform: scale(0.9); margin-right: 8px;">
                         Вино красное полусладкое
                     </label>
-                        <input type="checkbox" name="drinks" value="Вино красное сухое" 
-                               style="transform: scale(0.9);">
+                    <label style="font-size: 0.9rem; width: 100%; max-width: 200px;">
+                        <input type="checkbox" name="drinks" value="Вино красное сухое" style="transform: scale(0.9); margin-right: 8px;">
                         Вино красное сухое
                     </label>
-                        <input type="checkbox" name="drinks" value="Виски" 
-                               style="transform: scale(0.9);">
+                    <label style="font-size: 0.9rem; width: 100%; max-width: 200px;">
+                        <input type="checkbox" name="drinks" value="Виски" style="transform: scale(0.9); margin-right: 8px;">
                         Виски
                     </label>
-                        <input type="checkbox" name="drinks" value="Коньяк" 
-                               style="transform: scale(0.9);">
+                    <label style="font-size: 0.9rem; width: 100%; max-width: 200px;">
+                        <input type="checkbox" name="drinks" value="Коньяк" style="transform: scale(0.9); margin-right: 8px;">
                         Коньяк
                     </label>
-                        <input type="checkbox" name="drinks" value="Водка" 
-                               style="transform: scale(0.9);">
+                    <label style="font-size: 0.9rem; width: 100%; max-width: 200px;">
+                        <input type="checkbox" name="drinks" value="Водка" style="transform: scale(0.9); margin-right: 8px;">
                         Водка
                     </label>
-                        <input type="checkbox" name="drinks" value="Джин" 
-                               style="transform: scale(0.9);">
+                    <label style="font-size: 0.9rem; width: 100%; max-width: 200px;">
+                        <input type="checkbox" name="drinks" value="Джин" style="transform: scale(0.9); margin-right: 8px;">
                         Джин
                     </label>
-                        <input type="checkbox" name="drinks" value="Не пью алкоголь" 
-                               style="transform: scale(0.9);">
+                    <label style="font-size: 0.9rem; width: 100%; max-width: 200px;">
+                        <input type="checkbox" name="drinks" value="Не пью алкоголь" style="transform: scale(0.9); margin-right: 8px;">
                         Не пью алкоголь
                     </label>
                 </div>
             </div>
-
-            <button type="submit" 
-                    style="font-size: 1.1rem; padding: 12px 35px; margin-top: 25px;">
-                Отправить ответ
-            </button>
+            <div style="text-align: center; margin-top: 30px;">
+                <button type="submit" 
+                        style="font-size: 1rem; padding: 12px 35px; border-radius: 25px; background: #ff69b4; color: white; border: none; cursor: pointer;">
+                    Отправить ответ
+                </button>
+            </div>
         </form>
 
-        <p style="margin-top: 20px; font-size: 0.85rem; color: #666;">
+        <p style="margin-top: 20px; font-size: 0.85rem; color: #666; text-align: center;">
             Пожалуйста, подтвердите своё присутствие<br>
             не позднее 1 июня!
         </p>
     </div>
 </section>
+
+
+
+
+
+
 
     <script>
         // Таймер
