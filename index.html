@@ -149,72 +149,38 @@
     /* Новые цветовые коды */
     .color-1 { background: #383E42; }
     .color-2 { background: #8E8E8E; }
-    .color-3 { background: #C4C2BC; }
-    .color-4 { background: #946E55; }
-    .color-5 { background: #BA998A; }
-    .color-6 { background: #C8B19E; }
-    .color-7 { background: #696E59; }
-    .color-8 { background: #979A87; }
-    .color-9 { background: #EFC7C0; }
-    .color-10 { background: #F8F4EC; }
-    .color-11 { background: #F0E4DB; }
-    .color-12 { background: #FFFCFC; }
+    .color-3 { background: #946E55; }
+    .color-4 { background: #BA998A; }
+    .color-5 { background: #696E59; }
+    .color-6 { background: #979A87; }
+    .color-7 { background: #EFC7C0; }
+    .color-8 { background: #F0E4DB; }
 
-        
-    .color-grid-three-col {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-    
-    /* Для планшетов */
-    @media (max-width: 768px) {
-        .color-grid-three-col {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            padding: 15px;
-        }
-        .color-swatch {
-            width: 90px;
-            height: 90px;
-        }
+     .color-grid-three-col {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 15px;
     }
-    
-    /* Для мобильных */
+
+    /* Для мобильных устройств */
     @media (max-width: 480px) {
         .color-grid-three-col {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 10px;
             padding: 10px;
         }
         .color-swatch {
-            width: 70px;
-            height: 70px;
-        }
-        .color-name {
-            font-size: 0.75rem;
-            margin-top: 8px;
-        }
-    }
-    
-    /* Для очень маленьких экранов */
-    @media (max-width: 360px) {
-        .color-grid-three-col {
-            gap: 8px;
-            padding: 5px;
-        }
-        .color-swatch {
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
         }
         .color-name {
             font-size: 0.7rem;
+            margin-top: 5px;
         }
     }
- 
   /* Увеличены размеры и добавлены вариации */
 .floating-heart:nth-child(1) { 
     animation-delay: 0s; 
