@@ -498,6 +498,48 @@
                 padding: 12px !important;
             }
         }
+
+       /* Стили для блока пожеланий */
+        .wishes-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .wish-item {
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .divider-icon {
+            width: 60px; /* Размер изображения */
+            height: auto;
+            margin: 20px 0;
+            opacity: 0.8;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Анимация при наведении */
+        .divider-icon:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+        
+        /* Адаптив для мобильных */
+        @media (max-width: 480px) {
+            .divider-icon {
+                width: 45px;
+                margin: 15px 0;
+            }
+            
+            .wish-item p {
+                font-size: 0.9rem;
+                padding: 0 10px;
+            }
+        }
+
+
+        
     </style>
 </head>
 <body>
