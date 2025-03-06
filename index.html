@@ -159,6 +159,30 @@
     .color-10 { background: #9E6D5C; }
     .color-11 { background: #C4C2BC; }
     .color-12 { background: #F8F4EC; }
+        
+ /* Мобильная адаптация */
+        @media (max-width: 768px) {
+            .color-swatch {
+                width: 80px;
+                height: 80px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .color-swatch {
+                width: 70px;
+                height: 70px;
+                border-radius: 12px;
+            }
+            
+            .color-grid {
+                gap: 15px;
+            }
+            
+            .color-name {
+                font-size: 0.8rem;
+            }
+        }
 
         
   /* Увеличены размеры и добавлены вариации */
