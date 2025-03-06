@@ -345,36 +345,44 @@
         .form-label {
             display: block;
             text-align: left;
-            font-size: 1.1rem;
-            margin: 15px 0 8px;
+            font-size: 1.2rem;
+            margin: 20px 0 15px;
             color: #5a2a3a;
+            font-weight: 500;
         }
 
         input[type="text"], select {
             width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
             padding: 12px;
-            margin: 10px 0;
             border: 2px solid #ffb6c1;
-            border-radius: 8px;
-            font-size: 1rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            display: block;
         }
 
         .radio-group {
             display: flex;
             gap: 15px;
-            margin: 10px 0;
+            margin: 15px 0;
+            justify-content: center;
         }
 
         .checkbox-group {
             columns: 2;
-            text-align: left;
-            margin: 10px 0;
+            gap: 12px;
+            margin: 15px auto;
+            max-width: 500px;
         }
 
         .checkbox-group label {
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             margin: 8px 0;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            color: #555;
         }
 
         button {
@@ -395,18 +403,24 @@
 
         /* Адаптивность */
         @media (max-width: 600px) {
-            form {
-                padding: 20px 15px;
-                width: 100%;
-                max-width: 100%;
-                box-sizing: border-box;
+            .form-label {
+                font-size: 1.1rem;
             }
-            .names { font-size: 3.5rem; }
-            h2 { font-size: 2.2rem; }
-            .countdown { grid-template-columns: 1fr 1fr; }
-            .countdown-item span { font-size: 1.5rem; }
-            .schedule-item { flex-direction: column; text-align: center; }
-            .checkbox-group { columns: 1; }
+    
+            .checkbox-group {
+                columns: 1;
+                max-width: 300px;
+            }
+            
+            input[type="text"] {
+                width: 90%;
+                font-size: 0.9rem;
+            }
+            
+            button {
+                width: 90%;
+                margin: 15px auto;
+            }
         }
     </style>
 </head>
@@ -680,74 +694,101 @@
                  class="floating-heart heart-pos-4">
         </div>
        
-        <div style="margin: 20px 0;">
-  <!-- Удален лишний открывающий тег <form> в начале -->
-  <form id="weddingForm" action="https://formspree.io/f/xgvawwdd" method="POST">
-    <h2>Анкета гостя</h2> <!-- Перенесено внутрь формы -->
+        <div style="margin: 20px 0; width: 100%;">
+            <form id="weddingForm" action="https://formspree.io/f/xgvawwdd" method="POST">
+                <h2 style="font-size: 2rem; margin-bottom: 25px; color: #c94560;">Анкета гостя</h2>
+                
+                <!-- Поле для имени -->
+                <div class="form-group">
+                <label class="form-label">Ваше имя и фамилия<br>
+                    <span style="font-size: 0.9rem; color: #777;">(если вы придёте с парой, укажите и её имя)</span>
+                </label>
+                <input type="text" 
+                       name="guest_name" 
+                       placeholder="Например: Мария Петрова или Иван и Анна Смирновы"
+                       style="font-size: 0.95rem; padding: 10px;"
+                       required>
+            </div>
 
-    <!-- Поле для имени -->
-    <div class="form-group">
-      <label>Ваше имя и фамилия</label>
-      <input 
-        type="text" 
-        name="guest_name" 
-        placeholder="Например: Иван и Мария Петровы" 
-        required
-      >
+            <!-- Подтверждение присутствия -->
+            <div class="form-group">
+                <label class="form-label">Подтвердите участие:</label>
+                <div class="radio-group" style="gap: 20px; justify-content: center;">
+                    <label style="font-size: 1rem;">
+                        <input type="radio" name="attendance" 
+                               value="Да, с удовольствием!" required>
+                        <span style="font-size: 0.95rem;">Приду</span>
+                    </label>
+                    <label style="font-size: 1rem;">
+                        <input type="radio" name="attendance" 
+                               value="К сожалению, нет">
+                        <span style="font-size: 0.95rem;">Не смогу</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Напитки -->
+            <div class="form-group">
+                <label class="form-label">Предпочтения в напитках:</label>
+                <div class="checkbox-group" style="columns: 2; gap: 15px;">
+                    <!-- Уменьшаем размер чекбоксов -->
+                    <label style="font-size: 0.9rem;">
+                        <input type="checkbox" name="drinks" value="Шампанское" 
+                               style="transform: scale(0.9);">
+                        Шампанское
+                    </label>
+                        <input type="checkbox" name="drinks" value="Вино белое полусладкое" 
+                               style="transform: scale(0.9);">
+                        Вино белое полусладкое
+                    </label>
+                        <input type="checkbox" name="drinks" value="Вино белое сухое" 
+                               style="transform: scale(0.9);">
+                        Вино белое сухое
+                    </label>
+                        <input type="checkbox" name="drinks" value="Вино красное полусладкое" 
+                               style="transform: scale(0.9);">
+                        Вино красное полусладкое
+                    </label>
+                        <input type="checkbox" name="drinks" value="Вино красное сухое" 
+                               style="transform: scale(0.9);">
+                        Вино красное сухое
+                    </label>
+                        <input type="checkbox" name="drinks" value="Виски" 
+                               style="transform: scale(0.9);">
+                        Виски
+                    </label>
+                        <input type="checkbox" name="drinks" value="Коньяк" 
+                               style="transform: scale(0.9);">
+                        Коньяк
+                    </label>
+                        <input type="checkbox" name="drinks" value="Водка" 
+                               style="transform: scale(0.9);">
+                        Водка
+                    </label>
+                        <input type="checkbox" name="drinks" value="Джин" 
+                               style="transform: scale(0.9);">
+                        Джин
+                    </label>
+                        <input type="checkbox" name="drinks" value="Не пью алкоголь" 
+                               style="transform: scale(0.9);">
+                        Не пью алкоголь
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" 
+                    style="font-size: 1.1rem; padding: 12px 35px; margin-top: 25px;">
+                Отправить ответ
+            </button>
+        </form>
+
+        <p style="margin-top: 20px; font-size: 0.85rem; color: #666;">
+            Пожалуйста, подтвердите своё присутствие<br>
+            не позднее 1 июня!
+        </p>
     </div>
-
-    <!-- Подтверждение присутствия -->
-    <div class="form-group">
-      <label>Подтвердите присутствие:</label>
-      <div class="radio-group">
-        <label>
-          <input 
-            type="radio" 
-            name="attendance" 
-            value="Да, с удовольствием!" 
-            required
-          >
-          Да, с удовольствием!
-        </label>
-        <label>
-          <input 
-            type="radio" 
-            name="attendance" 
-            value="К сожалению, нет"
-          >
-          К сожалению, нет
-        </label>
-      </div>
-    </div>
-
-    <!-- Напитки -->
-    <div class="form-group">
-      <label>Напитки:</label>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="drinks" value="Шампанское"> Шампанское</label>
-        <label><input type="checkbox" name="drinks" value="Вино белое полусладкое"> Вино белое полусладкое</label>
-        <label><input type="checkbox" name="drinks" value="Вино белое сухое"> Вино белое сухое</label>
-        <label><input type="checkbox" name="drinks" value="Вино красное полусладкое"> Вино красное полусладкое</label>
-        <label><input type="checkbox" name="drinks" value="Вино красное сухое"> Вино красное сухое</label>
-        <label><input type="checkbox" name="drinks" value="Виски"> Виски</label>
-        <label><input type="checkbox" name="drinks" value="Коньяк"> Коньяк</label>
-        <label><input type="checkbox" name="drinks" value="Водка"> Водка</label>
-        <label><input type="checkbox" name="drinks" value="Джин"> Джин</label>
-        <label><input type="checkbox" name="drinks" value="Не пью алкоголь"> Не пью алкоголь</label>
-      </div>
-    </div>
-
-    <button type="submit">Отправить ответ</button>
-  </form> <!-- Закрывающий тег формы -->
-
-  <!-- Этот текст должен быть ВНЕ формы -->
-  <p style="margin-top: 20px; font-size: 0.9em;">
-    Пожалуйста, подтвердите своё присутствие<br>
-    не позднее 1 июня!
-  </p>
-</div>
-            
 </section>
+
     <script>
         // Таймер
         function updateTimer() {
